@@ -5,17 +5,25 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index"
+    "dev": "nodemon src/index.js --exec babel-node",
+    "build": "babel src --out-dir build",
+    "start": "node build/index.js"
   },
   "author": "Nicolas Romero",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongoose": "^5.11.8",
     "morgan": "^1.10.0",
     "node-env-file": "^0.1.8"
   },
   "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
     "nodemon": "^2.0.6"
   }
 }

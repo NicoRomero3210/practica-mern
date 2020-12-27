@@ -1,2 +1,2 @@
-.env.development
+src/.env.development
 node_modules/
