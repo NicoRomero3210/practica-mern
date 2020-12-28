@@ -1,11 +1,11 @@
-const userModel = require('../models/usersModel')
+import UsuarioModel from '../models/usersModel'
 
 class Usuario{
     static async registrarUsuario(req,res){
         try{
             const {usuario} = req.body
-            const modeloUsuario = new userModel(usuario);
-            const respuesta = await modeloUsuario.save();
+            const nuevoUsuario = new UsuarioModel(usuario)
+            const respuesta = await nuevoUsuario.save();
             res.json(respuesta)
         }catch(e){
             console.log(e);
@@ -15,7 +15,7 @@ class Usuario{
     }
     static async obtenerUsuarios(req,res){
         try{
-            const usuarios = await userModel.find();
+            const usuarios = await UsuarioModel.fin;
             res.json(usuarios)
         }catch(e){
             console.log(e)
@@ -23,6 +23,13 @@ class Usuario{
             res.end()
         }
     }
+    static async login(req,res){
+        try{
+            res.json("gato")
+        }catch(e){
+
+        }
+    }
 }
 
-module.exports = Usuario
+export default Usuario

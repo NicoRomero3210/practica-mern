@@ -1,12 +1,11 @@
+import {initialRoles} from './libs/initialSetup'
 const app = require('express')();
+initialRoles();
 const morgan = require('morgan');
 const mongoose = require('mongoose')
 const cors = require('cors')
 const bodyParser = require('body-parser')
 
-//Conectar a la bd
-mongoose.connect('mongodb://localhost/dbMongo').then(db=>{console.log('conectado')})
-.catch(err=>{console.log('error')})
 //middlewares
 app.use(morgan('dev'));
 app.use(bodyParser.json())
